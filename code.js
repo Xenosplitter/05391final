@@ -107,7 +107,7 @@ function draw()
     }
     rect(width/2-createCanvasOfInputArea/2, height/2+createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea); //draw next button
     fill(255);
-    text("NEXT > ", width/2-createCanvasOfInputArea/4, height/2+createCanvasOfInputArea); //draw next label
+    text("NEXT > ", width/2-createCanvasOfInputArea/4, height/2+3*createCanvasOfInputArea/4); //draw next label
 
     fill(200);
     for(row = 0; row < 5; row++) {

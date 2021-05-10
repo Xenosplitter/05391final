@@ -88,10 +88,11 @@ function draw()
   {
     //you can very slightly adjust the position of the target/entered phrases and next button
     textAlign(LEFT); //align the text left
-    fill(128);
-    text("Phrase " + (currTrialNum+1) + " of " + totalTrialNum, width/2-100, height/4); //draw the trial count
-    text("Target:   " + currentPhrase, width/2-100, height/4+20*scaleFactor); //draw the target string
-    text("Entered:  " + currentTyped + "|", width/2-100, height/4+40*scaleFactor); //draw what the user has entered thus far 
+    fill(128); 
+    
+    text("Phrase " + (currTrialNum+1) + " of " + totalTrialNum, 50, 50); //draw the trial count 
+    text("Target:   " + currentPhrase, 50, 50+20*scaleFactor); //draw the target string 
+    text("Entered:  " + currentTyped + "|", 50, 50+40*scaleFactor); //draw what the user has entered thus far  
     //draw very basic next button
     if (currentPhrase == currentTyped) {
       fill(0, 255, 0);
@@ -168,7 +169,7 @@ function draw()
 
   }
 }
- 
+
 function didMouseClick(x, y, w, h) //simple function to do hit testing
 {
   return (mouseX > x && mouseX<x+w && mouseY>y && mouseY<y+h); //check to see if it is in button bounds
@@ -207,7 +208,12 @@ function singleTap()
 
   //clicked in word prediction box
   if(didMouseClick(width/2-createCanvasOfInputArea/2, height/2-createCanvasOfInputArea/2+5*createCanvasOfInputArea/6, createCanvasOfInputArea, createCanvasOfInputArea/6)) {
+      if(currentTyped.split(" ").length > 1){
     currentTyped = shorten(currentTyped.split(" ")).join(" ") + " " + predicts[0] + String(" ");
+  }
+    else {
+    currentTyped = predicts[0] + String(" ");
+    }
   } 
 
   //You are allowed to have a next button outside the 1" area
@@ -278,6 +284,7 @@ function nextTrial()
   currentPhrase = phrases[currTrialNum]; // load the next phrase!
   //currentPhrase = "abc"; // uncomment this to override the test phrase (useful for debugging)
 }
+
 
 
 

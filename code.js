@@ -33,7 +33,7 @@ const topHundo = ["the","of","to","and","a","in","is","it","you","that","he","wa
 function setup()
 {
   textSize(12*scaleFactor);
-  createCanvas(0.9*screenWidth, 0.9*screenHeight); //Sets the createCanvas of the app. You should modify this to your device's native createCanvas. Many phones today are 1080 wide by 1920 tall.
+  createCanvas(0.9*windowWidth, 0.9*windowHeight); //Sets the createCanvas of the app. You should modify this to your device's native createCanvas. Many phones today are 1080 wide by 1920 tall.
   noStroke(); //my code doesn't use any strokes.
   predictionary.addWords(topHundo);
   phrases=shuffle(phrases)

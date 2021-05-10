@@ -94,12 +94,8 @@ function draw()
     text("Target:   " + currentPhrase, 50, 50+20*scaleFactor); //draw the target string 
     text("Entered:  " + currentTyped + "|", 50, 50+40*scaleFactor); //draw what the user has entered thus far  
     //draw very basic next button
-    if (currentPhrase == currentTyped) {
-      fill(0, 255, 0);
-    }
-    else {
-      fill(255, 0, 0);
-    }
+    fill(255, 0, 0);
+
     rect(width/2+createCanvasOfInputArea/2, height/2-createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea); //draw next button
     fill(255);
     text("NEXT > ", width/2+3*createCanvasOfInputArea/4, height/2); //draw next label

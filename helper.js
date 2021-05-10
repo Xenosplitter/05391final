@@ -7,7 +7,7 @@ const isTouchDevice =  function() {
   return is_or_not ? true : false; // Fix to always return true or false
 };
 
-
+ 
 function mousePressed() {
   if( isTouchDevice() )
    return;

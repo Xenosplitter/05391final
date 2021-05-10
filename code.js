@@ -1,8 +1,5 @@
-dpi_x = prompt("Please enter your device DPI (this is 96 on most desktops, but varies greatly on mobile devices): ");
-document.getElementById('testdiv').innerHTML = "DPI: " + dpi_x.toString();
-divPhrase = document.getElementById('phraseSec');
-divTarget = document.getElementById('phraseTarget');
-divTyped = document.getElementById('phraseTyped');
+dpi_x = prompt("Please enter your device DPI (this is 96 on most desktops, but varies greatly on mobile devices): ")
+document.getElementById('testdiv').innerHTML = "DPI: " + dpi_x.toString()
 screenWidth = document.getElementById('sizer').offsetWidth;
 screenHeight = document.getElementById('sizer').offsetHeight;
 
@@ -36,7 +33,7 @@ const topHundo = ["the","of","to","and","a","in","is","it","you","that","he","wa
 function setup()
 {
   textSize(12*scaleFactor);
-  createCanvas(0.9*screenWidth, 0.9*screenHeight); //Sets the createCanvas of the app. You should modify this to your device's native createCanvas. Many phones today are 1080 wide by 1920 tall.
+  createCanvas(0.9*windowWidth, 0.9*windowHeight); //Sets the createCanvas of the app. You should modify this to your device's native createCanvas. Many phones today are 1080 wide by 1920 tall.
   noStroke(); //my code doesn't use any strokes.
   predictionary.addWords(topHundo);
   phrases=shuffle(phrases)
@@ -78,7 +75,7 @@ function draw()
   {
     fill(128);
     textAlign(CENTER);
-    text("Click to start time!", width/2, 150); //display this message until the user clicks!
+    text("Click to start time!", 280, 150); //display this message until the user clicks!
   }
 
   if (startTime==0 & mouseIsPressed)
@@ -92,12 +89,9 @@ function draw()
     //you can very slightly adjust the position of the target/entered phrases and next button
     textAlign(LEFT); //align the text left
     fill(128);
-    divPhrase.innerHTML = "Phrase " + (currTrialNum+1) + " of " + totalTrialNum;
-    divTarget.innerHTML = "Target:   " + currentPhrase;
-    divTyped.innerHTML = "Entered:  " + currentTyped;
-    //text("Phrase " + (currTrialNum+1) + " of " + totalTrialNum, width/2-100, height/4); //draw the trial count
-    //text("Target:   " + currentPhrase, width/2-100, height/4+20); //draw the target string
-    //text("Entered:  " + currentTyped + "|", width/2-100, height/4+40); //draw what the user has entered thus far 
+    text("Phrase " + (currTrialNum+1) + " of " + totalTrialNum, width/2-100, height/4); //draw the trial count
+    text("Target:   " + currentPhrase, width/2-100, height/4+20*scaleFactor); //draw the target string
+    text("Entered:  " + currentTyped + "|", width/2-100, height/4+40*scaleFactor); //draw what the user has entered thus far 
     //draw very basic next button
     if (currentPhrase == currentTyped) {
       fill(0, 255, 0);
@@ -105,9 +99,9 @@ function draw()
     else {
       fill(255, 0, 0);
     }
-    rect(width/2-createCanvasOfInputArea/2, height/2+createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea); //draw next button
+    rect(width/2+createCanvasOfInputArea/2, height/2-createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea); //draw next button
     fill(255);
-    text("NEXT > ", width/2-createCanvasOfInputArea/4, height/2+3*createCanvasOfInputArea/4); //draw next label
+    text("NEXT > ", width/2+3*createCanvasOfInputArea/4, height/2); //draw next label
 
     fill(200);
     for(row = 0; row < 5; row++) {
@@ -174,7 +168,7 @@ function draw()
 
   }
 }
-
+ 
 function didMouseClick(x, y, w, h) //simple function to do hit testing
 {
   return (mouseX > x && mouseX<x+w && mouseY>y && mouseY<y+h); //check to see if it is in button bounds
@@ -217,7 +211,7 @@ function singleTap()
   } 
 
   //You are allowed to have a next button outside the 1" area
-  if (didMouseClick(width/2-createCanvasOfInputArea/2, height/2+createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea)) //check if click is in next button
+  if (didMouseClick(width/2+createCanvasOfInputArea/2, height/2-createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea)) //check if click is in next button
   {
     nextTrial(); //if so, advance to next trial
   }

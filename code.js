@@ -1,5 +1,8 @@
-dpi_x = prompt("Please enter your device DPI (this is 96 on most desktops, but varies greatly on mobile devices): ")
-document.getElementById('testdiv').innerHTML = "DPI: " + dpi_x.toString()
+dpi_x = prompt("Please enter your device DPI (this is 96 on most desktops, but varies greatly on mobile devices): ");
+document.getElementById('testdiv').innerHTML = "DPI: " + dpi_x.toString();
+divPhrase = document.getElementById('phraseSec');
+divTarget = document.getElementById('phraseTarget');
+divTyped = document.getElementById('phraseTyped');
 screenWidth = document.getElementById('sizer').offsetWidth;
 screenHeight = document.getElementById('sizer').offsetHeight;
 
@@ -89,9 +92,12 @@ function draw()
     //you can very slightly adjust the position of the target/entered phrases and next button
     textAlign(LEFT); //align the text left
     fill(128);
-    text("Phrase " + (currTrialNum+1) + " of " + totalTrialNum, width/2-100, height/4); //draw the trial count
-    text("Target:   " + currentPhrase, width/2-100, height/4+20); //draw the target string
-    text("Entered:  " + currentTyped + "|", width/2-100, height/4+40); //draw what the user has entered thus far 
+    divPhrase.innerHTML = "Phrase " + (currTrialNum+1) + " of " + totalTrialNum;
+    divTarget.innerHTML = "Target:   " + currentPhrase;
+    divTyped.innerHTML = "Entered:  " + currentTyped;
+    //text("Phrase " + (currTrialNum+1) + " of " + totalTrialNum, width/2-100, height/4); //draw the trial count
+    //text("Target:   " + currentPhrase, width/2-100, height/4+20); //draw the target string
+    //text("Entered:  " + currentTyped + "|", width/2-100, height/4+40); //draw what the user has entered thus far 
     //draw very basic next button
     if (currentPhrase == currentTyped) {
       fill(0, 255, 0);

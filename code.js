@@ -78,7 +78,7 @@ function draw()
   {
     fill(128);
     textAlign(CENTER);
-    text("Click to start time!", 280, 150); //display this message until the user clicks!
+    text("Click to start time!", width/2, 150); //display this message until the user clicks!
   }
 
   if (startTime==0 & mouseIsPressed)
@@ -105,9 +105,9 @@ function draw()
     else {
       fill(255, 0, 0);
     }
-    rect(width/2+createCanvasOfInputArea/2, height/2-createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea); //draw next button
+    rect(width/2-createCanvasOfInputArea/2, height/2+createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea); //draw next button
     fill(255);
-    text("NEXT > ", width/2+3*createCanvasOfInputArea/4, height/2); //draw next label
+    text("NEXT > ", width/2-createCanvasOfInputArea/4, height/2+createCanvasOfInputArea); //draw next label
 
     fill(200);
     for(row = 0; row < 5; row++) {
@@ -217,7 +217,7 @@ function singleTap()
   } 
 
   //You are allowed to have a next button outside the 1" area
-  if (didMouseClick(width/2+createCanvasOfInputArea/2, height/2-createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea)) //check if click is in next button
+  if (didMouseClick(width/2-createCanvasOfInputArea/2, height/2+createCanvasOfInputArea/2, createCanvasOfInputArea, createCanvasOfInputArea)) //check if click is in next button
   {
     nextTrial(); //if so, advance to next trial
   }

@@ -124,7 +124,7 @@ function draw()
               }
               rect(width/2-createCanvasOfInputArea/2+col*createCanvasOfInputArea/6-createCanvasOfInputArea/6, height/2-createCanvasOfInputArea/2+row*createCanvasOfInputArea/6, createCanvasOfInputArea/3, createCanvasOfInputArea/6);
               fill(0);
-              text('SPC', width/2-createCanvasOfInputArea/2+col*createCanvasOfInputArea/6+createCanvasOfInputArea/20-createCanvasOfInputArea/6, height/2-createCanvasOfInputArea/2+row*createCanvasOfInputArea/6+createCanvasOfInputArea/20, createCanvasOfInputArea/6, createCanvasOfInputArea/6);
+              text('_', width/2-createCanvasOfInputArea/2+col*createCanvasOfInputArea/6+createCanvasOfInputArea/20-createCanvasOfInputArea/12, height/2-createCanvasOfInputArea/2+row*createCanvasOfInputArea/6+createCanvasOfInputArea/30, createCanvasOfInputArea/6, createCanvasOfInputArea/6);
               continue;
             }
             else if(row ==4 && col == 4) continue;
@@ -137,7 +137,7 @@ function draw()
               }
               rect(width/2-createCanvasOfInputArea/2+col*createCanvasOfInputArea/6-createCanvasOfInputArea/6, height/2-createCanvasOfInputArea/2+row*createCanvasOfInputArea/6, createCanvasOfInputArea/3, createCanvasOfInputArea/6);
               fill(0);
-              text('BCK', width/2-createCanvasOfInputArea/2+col*createCanvasOfInputArea/6+createCanvasOfInputArea/20-createCanvasOfInputArea/6, height/2-createCanvasOfInputArea/2+row*createCanvasOfInputArea/6+createCanvasOfInputArea/20, createCanvasOfInputArea/6, createCanvasOfInputArea/6);
+              text('`', width/2-createCanvasOfInputArea/2+col*createCanvasOfInputArea/6+createCanvasOfInputArea/20-createCanvasOfInputArea/12, height/2-createCanvasOfInputArea/2+row*createCanvasOfInputArea/6+createCanvasOfInputArea/20, createCanvasOfInputArea/6, createCanvasOfInputArea/6);
               continue;
             }
             else if(row == 4) {
